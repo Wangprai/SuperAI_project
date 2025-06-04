@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import './App.css'
-import TextInput from "./components/TextInput";
+import { Main } from './pages/main';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <TextInput />
-    </div>
+    <Main />
   );
 };
-export default App
+
+export default App;
