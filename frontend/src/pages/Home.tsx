@@ -10,7 +10,7 @@ const { Header, Footer, Content } = Layout;
 
 const headerStyle: React.CSSProperties = {
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   alignItems: 'center',
   color: '#fff',
   height: 64,
@@ -58,7 +58,10 @@ export const Home: React.FC = () => {
   return (
     <Flex style={{ width: '100vw' }}>
       <Layout style={layoutStyle}>
-        <Header style={headerStyle}>Header</Header>
+        <Header style={headerStyle}>
+          <h3>Web Application Name</h3>
+          <p>Account</p>
+        </Header>
 
         <div className="container" style={ { height:'scroll' } }>
           <Content style={content1Style}>

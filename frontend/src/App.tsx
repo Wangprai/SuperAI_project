@@ -1,8 +1,13 @@
+import TextInput from './components/TextInput';
 import { Home } from './pages/Home';
 
 const App: React.FC = () => {
   return (
-    <Home />
+    <>
+      <Home />
+      <TextInput />
+    </>
+    
   );
 };
 

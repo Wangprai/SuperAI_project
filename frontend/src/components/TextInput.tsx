@@ -36,7 +36,7 @@ const TextInput: React.FC = () => {
 
   return (
     <Card style={{ maxWidth: 600, margin: "40px auto", padding: 24 }}>
-      <Title level={3}>Text-to-Speech ภาษาอีสาน</Title>
+      <Title level={3}>Esarn TTS</Title>
 
       <TextArea
         rows={4}
