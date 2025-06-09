@@ -1,12 +1,12 @@
 import React from 'react'
-import { Menu } from '../components/Menu';
-import { History } from '../components/History';
-
 import '../index.css'
 
 import { Flex, Layout } from 'antd';
+import { UploadBox } from '../components/UploadBox';
+import { OCRPreview } from '../components/OCRPreview';
+import { TextEdit } from '../components/TextEdit';
 
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 
 const headerStyle: React.CSSProperties = {
   display: 'flex',
@@ -17,36 +17,34 @@ const headerStyle: React.CSSProperties = {
   backgroundColor: '#4096ff',
 };
 
-const content1Style: React.CSSProperties = {
-  display: 'flex',
+const contentRightStyle: React.CSSProperties = {
+  display: 'block',
   justifyContent: 'center',
-  alignItems: 'center',
   padding: 25,
-  color: '#fff',
-  // backgroundColor: '#0958d9',
+  color: 'black',
   overflow: 'hidden',
-  height: '25%'
+  height: '100vh',
 };
 
-const content2Style: React.CSSProperties = {
-  display: 'flex',
+const contentLeftStyle: React.CSSProperties = {
+  display: 'block',
   justifyContent: 'center',
-  alignItems: 'center',
-  color: '#fff',
-  // backgroundColor: '#00faf6',
+  padding: 25,
+  color: 'black',
   overflow: 'hidden',
-  height: 'auto',
-  padding: 20,
+  height: '100vh',
 };
 
-const footerStyle: React.CSSProperties = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  color: '#fff',
-  height: '64',
-  backgroundColor: '#4096ff',
-};
+// const content2Style: React.CSSProperties = {
+//   display: 'flex',
+//   justifyContent: 'center',
+//   alignItems: 'center',
+//   color: '#fff',
+//   // backgroundColor: '#00faf6',
+//   overflow: 'hidden',
+//   height: 'auto',
+//   padding: 20,
+// };
 
 const layoutStyle: React.CSSProperties = {
   height: 'auto',
@@ -58,21 +56,20 @@ export const Home: React.FC = () => {
   return (
     <Flex style={{ width: '100vw' }}>
       <Layout style={layoutStyle}>
-        <Header style={headerStyle}>
-          <h3>Web Application Name</h3>
-          <p>Account</p>
-        </Header>
-
-        <div className="container" style={ { height:'scroll' } }>
-          <Content style={content1Style}>
-            <Menu />
-          </Content>
-          <Content style={content2Style}>
-            <History />
-          </Content>
+        <div className="header">
+          <Header style={headerStyle}>
+            <h3>Voice Communication</h3>
+          </Header>
         </div>
-
-        <Footer style={footerStyle}>Footer</Footer>
+        <div className="container">
+            <Content style={contentRightStyle}>
+              <UploadBox />
+              <OCRPreview />
+            </Content>
+            <Content style={contentLeftStyle}>
+              <TextEdit />
+            </Content>
+        </div>
       </Layout>
     </Flex>
   )
